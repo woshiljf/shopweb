@@ -7,3 +7,11 @@
 + 拷贝css样式
 + 拷贝扩展字体库
 + 添加 mui-icon-extra mui-icon-extra-cart
+## 改造tarbar为router-link
+## 设置路由高亮
+##　点击tabbar切换路由组建
+## 加载轮播图数据
+1. 使用vue-resource获取第三方服务器数据
+2. 使用this.$http.(get,post,put...)
+3. 获取数据存入data
+4. 使用v-for 循环渲染到每个item

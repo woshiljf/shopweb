@@ -28,7 +28,14 @@ module.exports = {
             { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
             { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
             //传递参数limit=显示图片大小(byte单位),大于或者等于，图片则不会转为base-64的格式。[name]...标识图片显示名称，加上8为哈希值，避免重名。
-            { test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=10000&name=[hash:8]-[name].[ext]' },
+            {
+                test: /\.(jpg|png|gif|bmp|jpeg)$/,
+                use: [{
+                    loader: 'url-loader?limit=10000&name=[hash:8]-[name].[ext]',
+                    options: { esModule: false }
+                }]
+            },
+
             { test: /\.(ttf|eot|svg|woff|woff2|otf)$/, use: 'url-loader' }, //处理字体文件
             { test: /\.vue$/, use: 'vue-loader' } //处理.vue文件
 
