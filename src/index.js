@@ -13,6 +13,7 @@ import { Header } from 'mint-ui'
 //导入mint-ui模块：所有的模块都导出end
 //mui-start
 import './lib/mui/css/mui.css'
+import './lib/mui/css/icons-extra.css'
 import './lib/mui/js/mui.js'
 //abc
 //agbc
