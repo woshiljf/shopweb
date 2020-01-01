@@ -10,6 +10,7 @@ import search from './components/tabbar/search.vue'
 import shopCar from './components/tabbar/shopCar.vue'
 import newList from './components/newsList/newList.vue'
 import newsinfo from './components/newsList/newsinfo.vue'
+
 //导入对应的组件模块end
 
 
