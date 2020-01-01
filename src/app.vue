@@ -2,7 +2,11 @@
 <template>
     <div  class="appContainer">
         <!-- 头部start -->
-        <mt-header fixed title="龙卷风-vue"></mt-header>
+        <mt-header fixed title="龙卷风-vue">
+            <router-link to="/" slot="left">
+               <mt-button icon="back">返回</mt-button>
+            </router-link>
+        </mt-header>
         <!-- 头部end -->
         <!-- 中间组件start -->
       <transition>
@@ -71,6 +75,7 @@ export default {
   .appContainer{
       padding-top:40px;
       overflow-x: hidden;
+      padding-bottom: 50px;
       
   }
 

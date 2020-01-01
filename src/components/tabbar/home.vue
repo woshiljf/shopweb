@@ -1,17 +1,17 @@
 <template>
     <div>
-        <!-- <h2>我是home组件</h2> -->
+        <!-- 1：轮播图</h2> -->
         <mt-swipe :auto="4000">
             <mt-swipe-item></mt-swipe-item>
             <mt-swipe-item></mt-swipe-item>
             <mt-swipe-item></mt-swipe-item>
         </mt-swipe>
-
+        <!--2： 6宫格区域 -->
         <div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newList">
 		                    <img src="../../images/menu1.png" alt="">
-		                    <div class="mui-media-body">新闻咨询</div></a></li>
+		                    <div class="mui-media-body">新闻咨询</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                     <img src="../../images/menu2.png" alt="">
 		                    <div class="mui-media-body">图片分享</div></a></li>
@@ -30,7 +30,8 @@
 		          	           
 		        </ul> 
 		</div>
-
+       
+          <router-view></router-view>
     </div>
 </template>
 
@@ -44,7 +45,7 @@ export default {
         }
     },
     created() {
-        this.getImg();
+        // this.getImg();
     },
 
     methods: {
@@ -63,9 +64,6 @@ export default {
             
         }
     },
-    
-    
-    
     
 }
 </script>

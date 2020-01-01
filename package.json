@@ -15,6 +15,7 @@
         "bootstrap": "^3.4.1",
         "jquery": "^3.4.1",
         "mint-ui": "^2.2.13",
+        "moment": "^2.24.0",
         "open-iconic": "git+https://github.com/iconic/open-iconic.git",
         "vue": "^2.6.11",
         "vue-resource": "^1.5.1"
