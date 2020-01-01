@@ -117,9 +117,6 @@ export default {
                }
            }
        }
-       li:hover{
-            background-color: red;
-            // transition: all 0.8s ease;
-       }
+      
    }
 </style>

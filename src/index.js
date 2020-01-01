@@ -10,13 +10,13 @@ import app from './app.vue'
 import vueResource from 'vue-resource'
 //导入mint-ui模块：所有的模块都导出start
 import 'mint-ui/lib/style.css'
-import { Header, Swipe, SwipeItem, Button, Spinner } from 'mint-ui'
+import { Header, Swipe, SwipeItem, Button, Spinner, Lazyload } from 'mint-ui'
 Vue.component(Spinner.name, Spinner);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Header.name, Header)
 Vue.component(Button.name, Button)
-
+Vue.use(Lazyload);
 //导入mint-ui模块：所有的模块都导出end
 //mui-start
 import './lib/mui/css/mui.css'

@@ -10,10 +10,8 @@ import search from './components/tabbar/search.vue'
 import shopCar from './components/tabbar/shopCar.vue'
 import newList from './components/newsList/newList.vue'
 import newsinfo from './components/newsList/newsinfo.vue'
-
+import PhotoList from './components/photoListCom/photoList.vue'
 //导入对应的组件模块end
-
-
 //创建router路由实例
 //以及实现的路由嵌套
 //修改router-link链接中的激活类：router-link-active属性 linkActiveClass:mui-active
@@ -28,7 +26,8 @@ var router = new VueRouter({
             { path: '/shopCar', component: shopCar },
             { path: '/search', component: search },
             { path: "/home/newList", component: newList },
-            { path: "/home/newsinfo/:id", component: newsinfo }
+            { path: "/home/newsinfo/:id", component: newsinfo },
+            { path: "/home/PhotoList", component: PhotoList }
 
         ],
         linkActiveClass: "mui-active"

@@ -31,3 +31,26 @@
 ## 实现加载更多
 1. 为加载更多按钮添加点击事件，事件方法中，向服务器请求下一页的评论(默认一页是10条数据)
 2. 点击加载更多，让pageIndex自增，重新向服务器发起第二次请求， 数据push到原数据之后（如果返回的是数组，concat拼接)
+
+## 完成发表评论的功能
+1. 把文本框做双向数据bangd
+2. 发表按钮绑定一个事件
+3. 校验评论内容是否为空，为空，Toast弹框显示用户。
+ + 评论成功，点击按钮，获取评论调用自定义方法，调用数组unshift方法，把最新的数据追加到data的comment的开头.
+
+## 图片列表，组件，美化
+1. 顶部滑动条mui里面寻找(或者自己制作),并取消全屏 mui-fullscreen这个类去掉（这里使用Mui)
+2. 制作 底部的图片列表.
+3. 滑动部分需要mui初始化
+4. 严格模式下的错误处理
++ mui.js中可能用到了"caller","callee",and"arguments"(严格模式下不能使用),webpack 打包的bundle.js默认使用的严格模式，两种冲突.
++ 解决方式:把webpack的严格模式移除.
++ 方法:安装移除严格模式插件 npm install babel-plugin-transform-remove-strict-mode
++ .babelrc: {
+    "plugins": ["transform-remove-strict-mode"]
+    }
+5. 解决页面加载无法滑动的问题:获取组件的dom元素应该在mounted里操作，否则无法获取dom元素
+ + 解决tab无法切换的问题:这是因为mui.js里的类mui-tab-item和mint-ui冲突了，修改类名
+### 值作图片列表区域
+1. 图片列表使用懒加载技术,使用mint-ui提供现成的组件'lazy-load',
+2. 根据懒加载的使用方法实现功能，渲染图片列表
