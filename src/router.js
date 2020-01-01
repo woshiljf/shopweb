@@ -29,7 +29,6 @@ var router = new VueRouter({
             { path: "/home/newList", component: newList },
             { path: "/home/newsinfo/:id", component: newsinfo }
 
-
         ],
         linkActiveClass: "mui-active"
     })
