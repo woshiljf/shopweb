@@ -72,13 +72,21 @@ export default {
 
 
 <style lang="scss" scoped>
+  .mint-header.is-fixed {
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    z-index: 999;
+}
+
   .appContainer{
       padding-top:40px;
       overflow-x: hidden;
       padding-bottom: 50px;
       
   }
-
+ 
   .v-enter{
       opacity: 0;
       transform: translateX(100%);

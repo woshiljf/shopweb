@@ -60,7 +60,8 @@ export default {
             });
          
             //添加到数组
-            this.commentsList.unshift({id:index+1,name:"匿名",comment:this.msg});           
+            this.commentsList.unshift({id:index+1,name:"匿名",comment:this.msg}); 
+                      
         }
     },
     //props属性，数组中的id为父组件传递过来的参数（预先定义好)

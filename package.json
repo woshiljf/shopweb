@@ -14,12 +14,14 @@
     "dependencies": {
         "babel-plugin-transform-remove-strict-mode": "0.0.2",
         "bootstrap": "^3.4.1",
+        "fs": "0.0.1-security",
         "jquery": "^3.4.1",
         "mint-ui": "^2.2.13",
         "moment": "^2.24.0",
         "open-iconic": "git+https://github.com/iconic/open-iconic.git",
         "vue": "^2.6.11",
-        "vue-resource": "^1.5.1"
+        "vue-resource": "^1.5.1",
+        "vue2-preview": "^1.0.5"
     },
     "devDependencies": {
         "babel-plugin-component": "^1.1.1",

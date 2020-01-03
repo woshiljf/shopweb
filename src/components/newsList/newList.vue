@@ -9,7 +9,7 @@
                     
 						<img class="mui-media-object mui-pull-left" :src="item.pic">
 						<div class="mui-media-body">
-							<h3 class="mui-ellipsis">{{item.title}}</h3>
+							<h3 class="mui-ellipsis" v-lazy="item.title">{{item.title}}</h3>
                             <p class="time">
                                 <span>发表时间:{{item.time|dateFormat("YYYY-MM-DD")}}</span>
                                 <span>{{item.src}}</span>
@@ -116,6 +116,12 @@ export default {
                    color: red
                }
            }
+
+            image[lazy=loading] {
+                width: 40px;
+                height: 300px;
+                margin: auto;
+                }
        }
       
    }

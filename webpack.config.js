@@ -49,6 +49,9 @@ module.exports = {
             'vue$': 'vue/dist/vue.js',
             'mui': path.join(__dirname, './src/lib/mui/js/mui.js')
         }
+    },
+    node: {
+        fs: "empty"
     }
 
 

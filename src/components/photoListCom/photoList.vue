@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="photoList-container">
         <div id="slider" class="mui-slider">
 				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 					<div class="mui-scroll">
@@ -15,6 +15,18 @@
 
 		</div>
         <!-- //图片列表懒加载技术的使用 -->
+        <ul>
+            <!-- //这里使用索引i来模拟id -->
+            <router-link v-for="(item,i) in list" :key="i" :to="'/home/photoinfo/'+(i+1)" tag="li">
+                <img v-lazy="item">
+                <div class="info">
+                    <div class="title"></div>
+                    <div class="abstract"></div>
+                </div>
+                
+            </router-link >
+            
+        </ul>
 
         
     </div>
@@ -25,38 +37,53 @@
 <script>
     //mui 头部滑动需要被初始化
     // 导入包
+    
     import  mui from '../../lib/mui/js/mui.js'
-
-  
+    
+    import imgUrl from '../../imgurl.json'
+    
+    
     export default {
         data() {
             return {
                 categorys:[
                     {id:0,title:"全部"},
-                    {id:1,title:"推荐"},
-                    {id:2,title:"热点"},
-                    {id:3,title:"北京"},
+                    {id:1,title:"刘亦菲"},
+                    {id:2,title:"周杰伦"},
+                    {id:3,title:"nba"},
                     {id:4,title:"美女"},
                     {id:5,title:"娱乐"},
                     {id:6,title:"社会"},
                     {id:7,title:"足球"},
                     {id:8,title:"CBA"},
                     {id:9,title:"NBA"},
+                ],
+                list:[
+                  
                 ]
+             
             }
+           
+        },
+        created() {
+            this.getImgs(0);
         },
         methods: {
 
                getImgs(imgId){
 
-                   this.$http.get('https://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&hs=0&xthttps=111111&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E5%91%A8%E6%9D%B0%E4%BC%A6&oq=%E5%91%A8%E6%9D%B0%E4%BC%A6&rsp=-1').then(response=>{
-                          console.log(response);
-                   }
-                      
-              )
-                   
-                   
-               }
+                //    this.$http.get('http://').then(response=>{
+                //           console.log(response);
+                //    }
+                //    )
+                //从本地读取所有的指定的文件路径，添加到数组
+               
+                this.list = imgUrl[imgId].url;
+                // console.log(imgUrl[imgId]);
+                
+           
+          
+            }
             
             
         },
@@ -76,5 +103,29 @@
 
 
 <style lang="scss" scoped>
- 
+
+.photoList-container{
+      ul{
+          margin: 0;
+          padding: 10px;
+          padding-bottom: 0;
+          li{
+               background-color: #ccc;
+               list-style: none;
+               margin-bottom: 10px;
+               box-shadow: 0 0 5px black;
+               image[lazy=loading] {
+                width: 40px;
+                height: 300px;
+                margin: auto;
+                }
+              img{
+                  width: 100%;
+                  vertical-align: middle;
+              }
+          }
+      }
+  }
+
+
 </style>

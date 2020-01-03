@@ -8,15 +8,21 @@ import Vue from 'vue'
 import router from './router.js'
 import app from './app.vue'
 import vueResource from 'vue-resource'
+//图片缩略图功能差距
+import VuePreview from 'vue2-preview'
+Vue.use(VuePreview)
+
 //导入mint-ui模块：所有的模块都导出start
 import 'mint-ui/lib/style.css'
-import { Header, Swipe, SwipeItem, Button, Spinner, Lazyload } from 'mint-ui'
-Vue.component(Spinner.name, Spinner);
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
-Vue.component(Header.name, Header)
-Vue.component(Button.name, Button)
-Vue.use(Lazyload);
+// import { Header, Swipe, SwipeItem, Button, Spinner, Lazyload } from 'mint-ui'
+// Vue.component(Spinner.name, Spinner);
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
+// Vue.component(Header.name, Header)
+// Vue.component(Button.name, Button)
+import MintUi from 'mint-ui'
+Vue.use(MintUi);
+
 //导入mint-ui模块：所有的模块都导出end
 //mui-start
 import './lib/mui/css/mui.css'

@@ -11,6 +11,7 @@ import shopCar from './components/tabbar/shopCar.vue'
 import newList from './components/newsList/newList.vue'
 import newsinfo from './components/newsList/newsinfo.vue'
 import PhotoList from './components/photoListCom/photoList.vue'
+import photoInfo from './components/photoListCom/photoInfo.vue'
 //导入对应的组件模块end
 //创建router路由实例
 //以及实现的路由嵌套
@@ -27,7 +28,8 @@ var router = new VueRouter({
             { path: '/search', component: search },
             { path: "/home/newList", component: newList },
             { path: "/home/newsinfo/:id", component: newsinfo },
-            { path: "/home/PhotoList", component: PhotoList }
+            { path: "/home/PhotoList", component: PhotoList },
+            { path: "/home/photoInfo/:id", component: photoInfo }
 
         ],
         linkActiveClass: "mui-active"
