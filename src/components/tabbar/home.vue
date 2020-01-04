@@ -1,11 +1,7 @@
 <template>
     <div>
         <!-- 1：轮播图</h2> -->
-        <mt-swipe :auto="4000">
-            <mt-swipe-item></mt-swipe-item>
-            <mt-swipe-item></mt-swipe-item>
-            <mt-swipe-item></mt-swipe-item>
-        </mt-swipe>
+         <swiper :lunbotu="lunbotuList"></swiper>
         <!--2： 6宫格区域 -->
         <div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -15,9 +11,9 @@
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/PhotoList">
 		                     <img src="../../images/menu2.png" alt="">
 		                    <div class="mui-media-body">图片分享</div></router-link></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodsList">
 		                    <img src="../../images/menu3.png" alt="">
-		                    <div class="mui-media-body">商品购买</div></a></li>
+		                    <div class="mui-media-body">商品购买</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <img src="../../images/menu4.png" alt="">
 		                    <div class="mui-media-body">留言反馈</div></a></li>
@@ -36,6 +32,8 @@
 </template>
 
 <script>
+import swiper from '../subcompinents/swiper.vue'
+import lunbotu from '../../lunbotu.json'
 import {Toast} from 'mint-ui'
 export default {
     data:function(){
@@ -45,52 +43,34 @@ export default {
         }
     },
     created() {
-        // this.getImg();
+        this.getImg();
     },
 
     methods: {
         getImg(){
-            this.$http.get("http://vue.studyit.io/api/getlunbo").then(result=>{
+            // this.$http.get("http://vue.studyit.io/api/getlunbo").then(result=>{
+            //     if(result.body.status==0){
+            //         this.lunbotuList=result.body.message
+            //     }else{
+            //           Toast("轮播图加载失败")
+            //     }               
+            // })
+            //没有服务器，手动添加数据
+            this.lunbotuList = lunbotu;
 
-                if(result.body.status==0){
-                    this.lunbotuList=result.body.message
-                }else{
-                      Toast("轮播图加载失败")
-                }
-                
-                
-            })
             
             
         }
     },
+    components:{
+        swiper
+    }
     
 }
 </script>
 
 <style lang="scss" scoped>
-   .mint-swipe{
-       height: 200px;
-       .mint-swipe-item{
-           &:nth-child(1){
-               //暂时使用固定图片
-               background-color: red;
-               background-image: url('../../images/1.jpg');
-               background-size: cover
-           }
-             &:nth-child(2){
-               background-color: skyblue;
-               background-image: url('../../images/3.jpg');
-                background-size: cover
-           }
-             &:nth-child(3){
-               background-color: palegreen;
-               background-image: url('../../images/4.jpg');
-               background-size: cover
-           }
-
-       }
-   }
+ 
    .mui-grid-view.mui-grid-9{
        background-color: #fff;
        li{

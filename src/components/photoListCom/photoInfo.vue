@@ -9,10 +9,10 @@
         <hr>
         <!-- 头部end -->
         <!-- 图片区域start -->
-        <div>
+        <div class="imgbox">
             <vue-preview
                 :list="list"
-                :thumbImageStyle="{width: '80px', height: '80px', margin: '10px'}"
+                :thumbImageStyle="{width: '80px', height: '80px', margin: '10px','box-shadow':'0 0 5px #000'}"
                 :previewBoxStyle="{border: '1px solid #eee'}"
                 :tapToClose="true"
                 @close="closeHandler"
@@ -44,8 +44,11 @@ export default {
         return {
             id:this.$route.params.id,
              
-            list:imgUrl
+            list:[]
         }
+    },
+    created() {
+        this.getImg();
     },
     methods: {
          closeHandler() {
@@ -53,8 +56,17 @@ export default {
             },
             // 完全关闭之后，调用这个函数清理资源
             destroyHandler() {
-            console.log('destroyHandler')
+            console.log('destroyHandler');
+            
             },
+            getImg(){
+                if(this.id%2==0){
+                    this.list=imgUrl[0];
+                }
+                else{
+                    this.list=imgUrl[1]
+                }
+            }
           
     },
  
@@ -84,6 +96,7 @@ export default {
            padding: 5px;
            margin-bottom:10px;
        }
+     
        
        
    }

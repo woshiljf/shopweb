@@ -95,8 +95,10 @@ export default {
            font-size: 13px;
                img{
                    width: 100%;
-
-           }      
+                }
+               video{
+                   width: 100%;
+               }    
        }
       
 
