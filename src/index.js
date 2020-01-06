@@ -28,8 +28,8 @@ Vue.use(MintUi);
 
 //导入mint-ui模块：所有的模块都导出end
 //mui-start
-import './lib/mui/css/mui.css'
-import './lib/mui/css/icons-extra.css'
+import './lib1/mui/css/mui.css'
+import './lib1/mui/css/icons-extra.css'
 //导入时间格式话插件
 import moment from 'moment'
 import VueRouter from 'vue-router'

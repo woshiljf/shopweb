@@ -38,7 +38,7 @@
     //mui 头部滑动需要被初始化
     // 导入包
     
-    import  mui from '../../lib/mui/js/mui.js'
+    import  mui from '../../lib1/mui/js/mui.js'
     
     import imgUrl from '../../imgurl.json'
     

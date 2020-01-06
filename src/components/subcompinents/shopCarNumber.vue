@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import mui from '../../lib/mui/js/mui.js'
+import mui from '../../lib1/mui/js/mui.js'
 export default {
     data() {
         return {
