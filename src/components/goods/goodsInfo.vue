@@ -75,7 +75,8 @@ export default {
 			maxMount:15,
 			goodsImg:[],
 			ballFlag:false,
-			count:1
+			count:1,
+			selected:false
 
 		}
 	},
@@ -93,24 +94,18 @@ export default {
 		goodsComment(id){
 			this.$router.push({name:"goodsComment",params:{id}})
 		},
-		//购买数量方法
-		decrease(){
-			
-			if(this.mount==0){
-				return;
-			}
-			this.mount--;
-		},
-		increase(){
-			if(this.mount>=10){
-				Toast('此商品限购10件');
-				return
-			}
-			this.mount++;
-
-		},
 		addCar(){
 			this.ballFlag = !this.ballFlag;
+		   //要加入store保存的数组对象
+		   var goodsinfo = {
+				id:this.id,
+				count:this.count,
+				price:2399,
+				selected:true
+			}
+		this.$store.commit('addToCar',goodsinfo);
+			
+			
 		},
 		//购物小球动画
 		beforeEnter(el){

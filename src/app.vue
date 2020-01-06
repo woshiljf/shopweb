@@ -3,9 +3,9 @@
     <div  class="appContainer">
         <!-- 头部start -->
         <mt-header fixed title="龙卷风-vue">
-            <router-link to="/" slot="left">
-               <mt-button icon="back" @click="back">返回</mt-button>
-            </router-link>
+            <span  slot="left">
+               <mt-button icon="back" @click="back" v-show="flag">返回</mt-button>
+            </span>
         </mt-header>
         <!-- 头部end -->
         <!-- 中间组件start -->
@@ -25,7 +25,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link  class="mui-tab-item1" to="/shopCar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span id="badge" class="mui-badge">0</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span id="badge" class="mui-badge">{{$store.getters.getAllCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link  class="mui-tab-item1" to="/search">
@@ -50,7 +50,8 @@ export default {
    data:function(){
        return {
            msg:"我是.vue方式的组件",
-           ToastInstance:null
+           ToastInstance:null,
+           flag:true
        }
    },
    created() {
@@ -65,9 +66,17 @@ export default {
      
        
    },
-    mounted() {
+   watch: {
+     "$route.path":function(newVal){
+
+       if(newVal ==="/home"){
+         this.flag = false;
+       }else{
+         this.flag = true;
+       }
        
-    }
+     }
+   },
     
 }
 </script>

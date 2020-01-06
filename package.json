@@ -21,7 +21,8 @@
         "open-iconic": "git+https://github.com/iconic/open-iconic.git",
         "vue": "^2.6.11",
         "vue-resource": "^1.5.1",
-        "vue2-preview": "^1.0.5"
+        "vue2-preview": "^1.0.5",
+        "vuex": "^3.1.2"
     },
     "devDependencies": {
         "babel-plugin-component": "^1.1.1",
