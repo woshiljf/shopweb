@@ -53,7 +53,6 @@ var car = JSON.parse(localStorage.getItem('car') || '[]');
 //创建Vuex实例对象
 
 var store = new Vuex.Store({
-
     state: {
         car: car //数组:数组对象中包括{id:商品id,count:购买数量,price：商品价格,select:是否选中（用于一键结账使用)}
     },
@@ -61,12 +60,9 @@ var store = new Vuex.Store({
         //调用方法:this.$store.commit("方法名称","参数")
         addToCar(state, goodsinfo) {
             //商品信息保存到car
-
             //先做判断,判断car中是否已经保存了之前的信息，如果有，则更新count即可
             //如果没有，这car.push(goodsinfo)
-
             var flag = state.car.some(item => {
-
                 if (item.id === goodsinfo.id) {
                     item.count = parseInt(item.count) + parseInt(goodsinfo.count);
                     return true;
@@ -79,45 +75,33 @@ var store = new Vuex.Store({
             localStorage.setItem('car', JSON.stringify(state.car));
         },
         updateGoodsInfo(state, goodsinfo) {
-
             state.car.some(item => {
-
-                if (item.id === goodsinfo.id) {
-
-                    item.count = parseInt(goodsinfo.count);
-                    return;
-                }
-            })
-
-            //更改了car之后，重新上传值localStoreage
+                    if (item.id === goodsinfo.id) {
+                        item.count = parseInt(goodsinfo.count);
+                        return;
+                    }
+                })
+                //更改了car之后，重新上传值localStoreage
             localStorage.setItem('car', JSON.stringify(state.car));
-
         },
         deleGoods(state, id) {
             state.car.some((item, i) => {
-
                     if (item.id == id) {
                         state.car.splice(i, 1);
                         return true;
                     }
-
                 })
                 //更改了car之后，重新上传值localStoreage
             localStorage.setItem('car', JSON.stringify(state.car));
-
-
         },
         updateGoodsSelected(state, info) {
             state.car.some(item => {
-
                 if (item.id == info.id) {
                     item.selected = info.selected;
                     return true;
                 }
-
             })
             localStorage.setItem('car', JSON.stringify(state.car));
-
         }
     },
     getters: {
@@ -128,13 +112,11 @@ var store = new Vuex.Store({
             var count = 0;
             state.car.forEach(element => {
                 count += parseInt(element.count);
-
             });
             return count;
         },
         //获取商品car中对应的id的count:如id:8,count:33,则对象为{8:33}
         getCount(state) {
-
             var o = {};
             state.car.forEach(item => {
                 o[item.id] = item.count;
@@ -142,7 +124,6 @@ var store = new Vuex.Store({
             return o;
         },
         goodsSelected(state) {
-
             var o = {};
             state.car.forEach(item => {
                 o[item.id] = item.selected;
@@ -150,7 +131,6 @@ var store = new Vuex.Store({
             return o;
         },
         getAllCountAndAmount(state) {
-
             var o = {
                 count: 0,
                 amount: 0
@@ -162,18 +142,9 @@ var store = new Vuex.Store({
                 }
             })
             return o;
-
-
         }
-
-
     }
-
-
 })
-
-
-
 var vm = new Vue({
     el: '#app',
     data: {

@@ -32,15 +32,12 @@
         
     </div>
 </template>
-
 <script>
 import number from '../subcompinents/shopCarNumber.vue'
 export default {
-
     data() {
         return {
             goodsList:[],
-        
         }
     },
     created() {
@@ -54,13 +51,10 @@ export default {
             this.goodsList = this.$store.state.car;
         },
         remove(id,index){
-
             this.goodsList.splice(index,1);
             this.$store.commit('deleGoods',id);
         },
         changeSelected(id,val){
-
-          
             this.$store.commit("updateGoodsSelected",{
                 id:id,
                 selected:val
@@ -69,8 +63,6 @@ export default {
         },
       
     },
-    
-    
     components:{
         number
     }

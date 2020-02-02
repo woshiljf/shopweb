@@ -35,7 +35,6 @@ module.exports = {
                     options: { esModule: false }
                 }]
             },
-
             { test: /\.(ttf|eot|svg|woff|woff2|otf)$/, use: 'url-loader' }, //处理字体文件
             { test: /\.vue$/, use: 'vue-loader' } //处理.vue文件
 
@@ -44,7 +43,7 @@ module.exports = {
     },
     //设置vue
     resolve: {
-        //修改vue被导入时包的路径,默认为rountetime
+        //修改vue被导入时包的路径,默认为rountetime.js
         alias: {
             'vue$': 'vue/dist/vue.js',
             'mui': path.join(__dirname, './src/lib/mui/js/mui.js')
