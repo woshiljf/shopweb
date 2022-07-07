@@ -17,7 +17,7 @@
         "fs": "0.0.1-security",
         "jquery": "^3.4.1",
         "mint-ui": "^2.2.13",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "open-iconic": "git+https://github.com/iconic/open-iconic.git",
         "vue": "^2.6.11",
         "vue-resource": "^1.5.1",
